@@ -1,10 +1,18 @@
 3/10/2019
-����getMinPeriod������δ���ԣ��㷨�ļ��ýṹ�Ĳ�����д
+添加getMinPeriod函数，未测试，算法文件用结构的参数改写
 3/11/2019
-���������㷨������������ж�������Ҳ��ҵ������ڲ�����С������
-����init.c�ж�����Ĳ���û���κ��ô���debugging--------------------------------------
+测试完整算法，针对数组中有多个周期且查找到的周期不是最小正周期
+发现init.c中对数组的操作没有任何用处，debugging--------------------------------------
 
 3/12/2019
-bug�ҵ��ˣ�malloc������࿪����242 ��С��unsigned short
+bug找到了，malloc函数最多开出了242 大小的unsigned short
 
-��������bug  2000HzʱgetMinPeriod ����28���������ݼ�Data.txt  ��ȷ����428��ԭʼ�Ĳ����ں�����������ǧ��֮һ���
+函数存在bug  2000Hz时getMinPeriod 返回28，具体数据见Data.txt  正确的是428，原始的测周期函数可以做到千分之一误差
+
+3/13/2019
+16khz epsilon 100
+函数返回:
+ 8010.680908 
+
+ 15873.015873 
+在之间跳新数据见Data.txt
