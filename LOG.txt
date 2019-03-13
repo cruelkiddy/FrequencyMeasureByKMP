@@ -16,3 +16,4 @@ bug找到了，malloc函数最多开出了242 大小的unsigned short
 
  15873.015873 
 在之间跳新数据见Data.txt
+可能需要调整参数解决
