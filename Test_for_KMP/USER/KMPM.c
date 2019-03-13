@@ -57,11 +57,13 @@ int pmatch(Parameters* State,int sl, int pl){
 
 int hasPeriod(Parameters* State){ 
     int index_found;
+    int period;
     int pattern_length = State->Array_Size/(2<<State->Recursion_Depth);
     while(pattern_length > State->Array_Size/(4<<State->Recursion_Depth)) { //Value?
         if ((index_found = pmatch(State, State->Array_Size/(1<<State->Recursion_Depth) - pattern_length, pattern_length)) != -1){
+					period = State->Array_Size/(1<<State->Recursion_Depth) - pattern_length - index_found;
 					State->Recursion_Depth ++;
-					return  State->Array_Size/(1<<State->Recursion_Depth) - pattern_length - index_found;
+					return  period;
 				}
         pattern_length --;
     }
